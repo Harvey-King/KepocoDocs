@@ -1,0 +1,42 @@
+{
+  "Kepoco game loop": {
+    "prefix": "kp-game",
+    "description": "Complete Kepoco loop with module import, elapsed-time steering and B to quit.",
+    "body": ["import kepoco", "import time", "", "kepoco.display.setFPS(${1:30})", "x = 32.0", "last = time.ticks_ms()", "", "while True:", "    now = time.ticks_ms()", "    dt = max(0, min(100, time.ticks_diff(now, last)))", "    last = now", "    if kepoco.buttonB.justPressed():", "        break", "    direction = int(kepoco.buttonR.pressed()) - int(kepoco.buttonL.pressed())", "    x = max(0, min(kepoco.display.width - 6, x + direction * dt * 0.05))", "    kepoco.display.fill(kepoco.display.BLACK)", "    kepoco.display.drawFilledRectangle(int(x), 20, 6, 6, kepoco.display.WHITE)", "    kepoco.display.update()", "", "kepoco.display.fill(kepoco.display.BLACK)", "kepoco.display.update()", "$0"]
+  },
+  "Kepoco sprite": {
+    "prefix": "kp-sprite",
+    "description": "8x8 vertical-bit sprite made from a bytearray; source accepts bytearray, not arbitrary bytes.",
+    "body": ["import kepoco", "bitmap = bytearray([0x3C, 0x42, 0x81, 0x81, 0x81, 0x81, 0x42, 0x3C])", "${1:sprite} = kepoco.Sprite(8, 8, bitmap, x=${2:32}, y=${3:16}, key=-1)", "kepoco.display.drawSprite(${1:sprite})", "$0"]
+  },
+  "Kepoco text": {
+    "prefix": "kp-text",
+    "description": "Draw byte-string text with the current font, avoiding cross-runtime memoryview(str) assumptions.",
+    "body": ["import kepoco", "kepoco.display.drawText(b'${1:HELLO}', ${2:0}, ${3:0}, kepoco.display.WHITE)", "$0"]
+  },
+  "Kepoco rectangle": {
+    "prefix": "kp-rect",
+    "description": "Source-matched drawFilledRectangle parameter order: x, y, width, height, colour.",
+    "body": ["import kepoco", "kepoco.display.drawFilledRectangle(${1:0}, ${2:0}, ${3:8}, ${4:8}, kepoco.display.${5:WHITE})", "$0"]
+  },
+  "Kepoco nonblocking tone": {
+    "prefix": "kp-tone",
+    "description": "Play a tone without blocking; audio support depends on the target backend.",
+    "body": ["import kepoco", "kepoco.audio.play(${1:440}, ${2:100})", "$0"]
+  },
+  "Kepoco saved score": {
+    "prefix": "kp-save",
+    "description": "Select a save namespace and persist a score. This writes on the device when executed.",
+    "body": ["import kepoco", "kepoco.saveData.setName('${1:MyGame}')", "previous = kepoco.saveData.getItem('best')", "best = 0 if previous is None else int(previous)", "best = max(best, ${2:0})", "kepoco.saveData.setItem('best', best)", "kepoco.saveData.save()", "$0"]
+  },
+  "Kepoco button edge": {
+    "prefix": "kp-button",
+    "description": "Read a button edge once; pressed() is for held controls.",
+    "body": ["import kepoco", "if kepoco.button${1:A}.justPressed():", "    ${2:pass}", "$0"]
+  },
+  "Kepoco bitmap font": {
+    "prefix": "kp-font",
+    "description": "Use the supplied font file; exact keyword is space, not spacing.",
+    "body": ["import kepoco", "kepoco.display.setFont('/lib/font${1:3x5}.bin', width=${2:3}, height=${3:5}, space=${4:1})", "$0"]
+  }
+}

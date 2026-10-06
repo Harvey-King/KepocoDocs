@@ -1,0 +1,13 @@
+.venv/
+.cache/
+__pycache__/
+*.py[cod]
+node_modules/
+dist/
+vscode-extension/assets/
+vscode-extension/THIRD_PARTY_NOTICES.md
+vscode-extension/licenses/
+.vscode/*report*.json
+.vscode/live-verification.json
+.vscode/kepoco-intellisense-check.py
+preview.png

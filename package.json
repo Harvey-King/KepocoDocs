@@ -1,0 +1,14 @@
+{
+  "name": "kepoco-docs",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/test_extension.js",
+    "typecheck": "pyright --project pyrightconfig.json",
+    "package": "python tools/build_release.py"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "4.0.0",
+    "pyright": "1.1.414"
+  }
+}

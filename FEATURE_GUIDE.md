@@ -1,6 +1,8 @@
-# Kepoco feature guide: the downloaded API
+# Kepoco feature guide: the archived API
 
-This guide describes **source-declared** features, not device-tested capabilities. References use the supplied Downloads filenames and original line numbers. `source-library/` is the workspace's reference copy, not a replacement runtime. The generated [API reference](API_REFERENCE.md) provides the larger inventory; [firmware notes](FIRMWARE_NOTES.md) explain why some declared calls may fail.
+[Overview](readme.md) · [Getting started](GETTING_STARTED.md) · [Features](FEATURE_GUIDE.md) · [API reference](API_REFERENCE.md) · [Firmware notes](FIRMWARE_NOTES.md) · [USB workflow](USB_WORKFLOW.md)
+
+This guide describes **source-declared** features, not device-tested capabilities. References use filenames under `source-library/` and their original line numbers. `source-library/` is the repository’s archived reference copy, not a replacement runtime. The generated [API reference](API_REFERENCE.md) provides the larger inventory; [firmware notes](FIRMWARE_NOTES.md) explain why some declared calls may fail.
 
 ## Imports and display model
 
@@ -93,3 +95,8 @@ The preferred declared mode methods are `setModeMono()`, `setModeGreyscale()`, `
 Configuration is accessed separately with `from kepocoConfig import settings`, not `kepoco.settings`. `settings[key]` returns a raw stored value/index; `getOption(key)` resolves an option/value; `getValue(key)` resolves a numeric value where provided. Assignment writes `kepoco.cfg` and invokes callbacks (`kepocoConfig.py:55–91`). Declared keys are `audioenabled`, `lastgame`, `brightness`, `vga`, with default indices/values 1, `/Games/Evaluator/Evaluator.py`, 1, 1 respectively (`kepocoConfig.py:14–37`). The exact callback name is **`updateBirghtness(newval)`** (`kepocoConfig.py:7–9,30`), not `updateBrightness`. The supplied comma-format cfg does not match this reader.
 
 VGA routing is chosen by `settings["vga"]`: positive values trigger I2C address probing, mode 2 requests physical-screen disable after a driver wrap (`thumbyGraphics.py:214–249`). This is source logic, not proof of connected VGA hardware. The source VGA file has a syntax failure; do not enable it without addressing that in the actual firmware. Demo recording/playback is a separate monkeypatching helper, not a game-loop API or a verified desktop runner (`demo.py:3–45,79–94,154–207`).
+
+
+## Using these features on a device
+
+Start with [Getting started](GETTING_STARTED.md), then use the repository’s [USB workflow](USB_WORKFLOW.md) to run saved game files. Editor hints and this archive inventory do not establish support on an installed runtime. The prior SWERVE device smoke test is documented separately; it did not test every API here or visually verify physical controls.

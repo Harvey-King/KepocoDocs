@@ -1,0 +1,9 @@
+{
+  "include": ["examples", "tools/fixtures/sdk_probe.py"],
+  "exclude": ["source-library", "vendor"],
+  "stubPath": "./typings",
+  "extraPaths": ["./vendor/micropython"],
+  "typeCheckingMode": "basic",
+  "reportMissingModuleSource": "none",
+  "pythonVersion": "3.11"
+}
