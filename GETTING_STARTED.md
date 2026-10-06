@@ -1,12 +1,20 @@
-# Getting started with Kepoco in this workspace
+# Getting started with Kepoco
 
-## Open the game project, not the firmware dump
+[Overview](readme.md) · [Getting started](GETTING_STARTED.md) · [Features](FEATURE_GUIDE.md) · [API reference](API_REFERENCE.md) · [Firmware notes](FIRMWARE_NOTES.md) · [USB workflow](USB_WORKFLOW.md)
 
-Open **`C:/Users/Win1122h2/KepocoSwerve`** as the VS Code folder. The existing **`swerve.py`** is the game. Its target imports are inside `main()` (`swerve.py:176–180`); the entry point calls that function (`swerve.py:194–195`). Left/right steer, A starts/retries and boosts while held, and B exits (`swerve.py:183–191`).
+## Open your local checkout, not the firmware archive
 
-The supplied library is in `C:/Users/Win1122h2/Downloads`. These documents describe that specific source snapshot, not a generic Thumby API or a guarantee about your installed firmware. Source citations below refer to files in that Downloads directory unless marked `swerve.py`.
+Open the root of your local **KepocoDocs checkout** as the VS Code folder. The existing **`swerve.py`** is the game. Its target imports are inside `main()` (`swerve.py:176–180`); the entry point calls that function (`swerve.py:194–195`). Left/right steer, A starts/retries and boosts while held, and B exits (`swerve.py:183–191`).
+
+The archived library is in [`source-library/`](source-library/). These documents describe that specific source snapshot, not a generic Thumby API or a guarantee about your installed firmware. Citations such as `thumbyGraphics.py:86–98` refer to `source-library/thumbyGraphics.py` and its original line numbers; `swerve.py` citations refer to the game at the checkout root.
 
 **Editor typings are editor-only.** Keep `typings/` and `.pyi` files on the PC, out of device uploads. Do not add a fake `kepoco.py` beside the game: it could shadow the real firmware module. In this workspace, the intended editor configuration is `python.analysis.stubPath: "./typings"`; use the workspace's editor setup rather than importing the downloaded firmware into desktop Python. Completion describes source-declared members, not whether a particular board can execute them. See [FEATURE_GUIDE.md](FEATURE_GUIDE.md) and [FIRMWARE_NOTES.md](FIRMWARE_NOTES.md).
+
+## Set up the editor and USB tools
+
+For source-derived completion, install the public VSIX with **Extensions: Install from VSIX** in VS Code, following the [overview](readme.md). There is no Marketplace installation claim. The extension provides editor support only: its project setup does **not** install the USB runner or VS Code tasks. Those come with this repository (`tools/usb_device.py` and `.vscode/tasks.json`).
+
+Before running USB tasks, create `.venv` at the checkout root and install the development requirements with its Python interpreter. The [USB workflow](USB_WORKFLOW.md#prepare-the-local-checkout) has Windows and macOS/Linux commands. The tasks use `.venv/Scripts/python` on Windows or `.venv/bin/python` on macOS/Linux, not a machine-specific interpreter path.
 
 ## Runtime requirements and deployment boundary
 
@@ -14,7 +22,7 @@ Use the Kepoco/MicroPython target or its configured emulator to run the game. `i
 
 The display interface copies its logical dimensions from the selected driver; the source's Kepoco HWID 9/10 branches instantiate 72×40 drivers (`thumbyGraphics.py:16–24`; `thumbyHardware.py:103–118`). This does not identify your actual board. Confirm the installed firmware, selected driver and reported dimensions before assuming compatibility.
 
-Deploy `swerve.py` through the upload/run mechanism you already use for your device or emulator. No uploader, firmware version, or verified connection is established by this source audit. Do not overwrite firmware libraries or copy the entire Downloads folder to the target. Existing SWERVE uses its own rectangle-based font (`swerve.py:59–83`) and does not call library `drawText`; the library still loads `/lib/font5x7.bin` during display construction (`thumbyGraphics.py:23,135–145`).
+USB run and upload tasks are now available in this workspace: see [USB_WORKFLOW.md](USB_WORKFLOW.md). Press **Ctrl+S** to save the current `.py` file, then **Ctrl+Shift+B** to run it on the connected handheld. The upload task installs only that game file under `/Games/<game-name>/<filename>.py` and verifies it by reading it back. Do not overwrite firmware libraries or copy the archived source library to the target. Existing SWERVE uses its own rectangle-based font (`swerve.py:59–83`) and does not call library `drawText`; the library still loads `/lib/font5x7.bin` during display construction (`thumbyGraphics.py:23,135–145`).
 
 ## Target-runtime example: moving a rectangle
 
@@ -51,10 +59,10 @@ The default font is 5×7 with spacing 1 (`thumbyGraphics.py:23`). Font presence 
 
 ## If startup fails
 
-Capture the exact exception, filename, line number, firmware identification and emulator/device name. First check the audit's import blockers: comma-format `kepoco.cfg`, conditional `buttonC`, missing display annotation name and broken fallback/VGA source. A green editor or successful host syntax check cannot repair those issues.
+Capture the exact exception, filename, line number, firmware identification and emulator/device name. For USB connection failures, see [USB troubleshooting](USB_WORKFLOW.md#troubleshooting). If using firmware derived from the archive, check the audit's import blockers: comma-format `kepoco.cfg`, conditional `buttonC`, missing display annotation name and broken fallback/VGA source. A green editor or successful host syntax check cannot repair those issues.
 
-Nothing in this documentation task imports the original hardware modules, flashes firmware, or changes downloaded files. Host syntax checks are reported separately from unperformed device/emulator execution in the audit.
+The archive audit did not execute its hardware modules or flash firmware. Separately, prior verification on an installed **MicroPython 1.29.0 KEPOCO build** reported a **72×40** display, read-back-verified the SWERVE upload, and executed 60 gameplay frames plus title/crash drawing. This does not establish that the archived firmware works, nor that physical controls or image quality were visually tested. See [verification boundaries](USB_WORKFLOW.md#prior-real-device-verification).
 
 ## Redistribution hygiene
 
-Several downloaded files carry Thumby-origin GPL v3-or-later notices and original author attribution (`kepoco.py:5–21`; `thumbySprite.py:3–19`; `ssd1306.py:4–15`). If redistributing those sources or derivatives, preserve their notices/attribution and include the applicable license material; review the source-origin obligations for what you distribute. The supplied `credits.txt` is a credits list, not a substitute for license notices. This is an origin reminder, not a claim about the license of newly written editor tooling.
+Several archived files carry Thumby-origin GPL v3-or-later notices and original author attribution (`kepoco.py:5–21`; `thumbySprite.py:3–19`; `ssd1306.py:4–15`). If redistributing those sources or derivatives, preserve their notices/attribution and include the applicable license material; review the source-origin obligations for what you distribute. The supplied `credits.txt` is a credits list, not a substitute for license notices. This is an origin reminder, not a claim about the license of newly written editor tooling.

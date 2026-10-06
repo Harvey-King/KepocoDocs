@@ -1,8 +1,10 @@
 # Kepoco source-derived API reference
 
-Generated from your downloaded sources. Exact spellings, parameter names and defaults are retained.
+[Overview](readme.md) · [Getting started](GETTING_STARTED.md) · [Features](FEATURE_GUIDE.md) · [API reference](API_REFERENCE.md) · [Firmware notes](FIRMWARE_NOTES.md) · [USB workflow](USB_WORKFLOW.md)
+
+Generated from the archived sources under `source-library/`. Source filenames and original line numbers below refer to that directory; SHA-256 values identify the archived inputs, not the installed device runtime. Exact spellings, parameter names and defaults are retained.
 Type hints in typings are editor annotations, not guarantees of hardware support.
-Backend branches are merged for discoverability; read FIRMWARE_NOTES.md before relying on them.
+Backend branches are merged for discoverability; read [Firmware notes](FIRMWARE_NOTES.md) before relying on them. This is an archive inventory, not a device-tested compatibility matrix; see [prior installed-runtime verification](USB_WORKFLOW.md#prior-real-device-verification).
 
 ## Module index
 
@@ -26,7 +28,7 @@ Backend branches are merged for discoverability; read FIRMWARE_NOTES.md before r
 
 ## demo
 
-Source: [source-library/demo.py](../source-library/demo.py).
+Source: [source-library/demo.py](source-library/demo.py).
 SHA-256: `d99e4dcd13d99dbb86329adcae0668426f50d123d09d0e25d99ceba285f40ad4`.
 
 - `demo(button_src: str | list[str], duration: int | None=None, run: str | None=None, rseed=3235823343, return_module: bool=False)` — Source-declared function. [demo.py:3]
@@ -34,7 +36,7 @@ SHA-256: `d99e4dcd13d99dbb86329adcae0668426f50d123d09d0e25d99ceba285f40ad4`.
 
 ## dummyScreen
 
-Source: [source-library/dummyScreen.py](../source-library/dummyScreen.py).
+Source: [source-library/dummyScreen.py](source-library/dummyScreen.py).
 SHA-256: `990007d7edc738f25c59d9c35674acde38274640e9d56260c06c37b50ad10341`.
 
 
@@ -69,13 +71,13 @@ SHA-256: `990007d7edc738f25c59d9c35674acde38274640e9d56260c06c37b50ad10341`.
 
 ## kepoco
 
-Source: [source-library/kepoco.py](../source-library/kepoco.py).
+Source: [source-library/kepoco.py](source-library/kepoco.py).
 SHA-256: `2cb5452df0aba44052c63a7abad5910ecf6c428ad07be327a22a2bb3901a109b`.
 
 
 ## kepocoConfig
 
-Source: [source-library/kepocoConfig.py](../source-library/kepocoConfig.py).
+Source: [source-library/kepocoConfig.py](source-library/kepocoConfig.py).
 SHA-256: `3ce182cc6aa6fde8355e28b47caf1a90840c1eba49867daa306889082635ba8f`.
 
 
@@ -104,7 +106,7 @@ SHA-256: `3ce182cc6aa6fde8355e28b47caf1a90840c1eba49867daa306889082635ba8f`.
 
 ## kepocoDisplayDriver
 
-Source: [source-library/kepocoDisplayDriver.py](../source-library/kepocoDisplayDriver.py).
+Source: [source-library/kepocoDisplayDriver.py](source-library/kepocoDisplayDriver.py).
 SHA-256: `ae491095a1c2d4259cc06d3543324f787ec0096ba530822769c1ccad4f7d6dd6`.
 
 
@@ -139,7 +141,7 @@ SHA-256: `ae491095a1c2d4259cc06d3543324f787ec0096ba530822769c1ccad4f7d6dd6`.
 
 ## kepocoDisplayST77xx
 
-Source: [source-library/kepocoDisplayST77xx.py](../source-library/kepocoDisplayST77xx.py).
+Source: [source-library/kepocoDisplayST77xx.py](source-library/kepocoDisplayST77xx.py).
 SHA-256: `3885cd64823c1881b64ca93f5983cb9b22277009700ace9dd4d94f33cfc9d047`.
 
 
@@ -197,7 +199,7 @@ SHA-256: `3885cd64823c1881b64ca93f5983cb9b22277009700ace9dd4d94f33cfc9d047`.
 
 ## kepocoVGA
 
-Source: [source-library/kepocoVGA.py](../source-library/kepocoVGA.py).
+Source: [source-library/kepocoVGA.py](source-library/kepocoVGA.py).
 SHA-256: `f29ea1a23a965c2e5218fc1d9a0c87408dd2c6d3539b1038782b63d54112b1ea`.
 
 WARNING: original syntax failure at line 223; index-only body placeholder used. The source was not repaired.
@@ -241,7 +243,7 @@ WARNING: original syntax failure at line 223; index-only body placeholder used. 
 
 ## ssd1306
 
-Source: [source-library/ssd1306.py](../source-library/ssd1306.py).
+Source: [source-library/ssd1306.py](source-library/ssd1306.py).
 SHA-256: `53190af3773ab6fc60edc244205d16db2411dfb79d48b25ea05b4f652842281a`.
 
 
@@ -284,13 +286,13 @@ SHA-256: `53190af3773ab6fc60edc244205d16db2411dfb79d48b25ea05b4f652842281a`.
 
 ## thumby
 
-Source: [source-library/thumby.py](../source-library/thumby.py).
+Source: [source-library/thumby.py](source-library/thumby.py).
 SHA-256: `bd7c4a032fed705fdedb4949bd21fc503865c1c05c0cce5fc25cb1311051b70b`.
 
 
 ## thumbyAudio
 
-Source: [source-library/thumbyAudio.py](../source-library/thumbyAudio.py).
+Source: [source-library/thumbyAudio.py](source-library/thumbyAudio.py).
 SHA-256: `fc6dd47549dbf03d91b89f8ee8d78d9d450871af49be8dfbad1a0bc811514375`.
 
 
@@ -302,7 +304,7 @@ SHA-256: `fc6dd47549dbf03d91b89f8ee8d78d9d450871af49be8dfbad1a0bc811514375`.
 ### AudioClass (thumbyAudio.py:59)
 
 - `__init__(self, pwm)` — Source-declared method; backend-specific implementation. [thumbyAudio.py:60]
-- `setEnabled(self, setting=1)` — Set the audio to disabled, mid, or high output [thumbyAudio.py:75]
+- `setEnabled(self, setting=1)` — Set the audio enable flag, clamped to 0 or 1 in this source [thumbyAudio.py:75]
 - `stop(self, dummy=None)` — Stop audio. [thumbyAudio.py:84]
 - `set(self, freq)` — Set the frequency and duty of the PWM audio if currently enabled. [thumbyAudio.py:92]
 - `play(self, freq, duration)` — Play frequency freq (Hz) for duration milliseconds without waiting for completion. Requires a working audio backend. [thumbyAudio.py:102]
@@ -310,7 +312,7 @@ SHA-256: `fc6dd47549dbf03d91b89f8ee8d78d9d450871af49be8dfbad1a0bc811514375`.
 
 ## thumbyButton
 
-Source: [source-library/thumbyButton.py](../source-library/thumbyButton.py).
+Source: [source-library/thumbyButton.py](source-library/thumbyButton.py).
 SHA-256: `3335ac9611054d342758c8b5aea692aebd7a6f5efeb5c4abf41ade49357b3fc3`.
 
 
@@ -332,7 +334,7 @@ SHA-256: `3335ac9611054d342758c8b5aea692aebd7a6f5efeb5c4abf41ade49357b3fc3`.
 
 ## thumbyGraphics
 
-Source: [source-library/thumbyGraphics.py](../source-library/thumbyGraphics.py).
+Source: [source-library/thumbyGraphics.py](source-library/thumbyGraphics.py).
 SHA-256: `ba193e731f3f03a64b05c71db1a65ac7ee70ea0cc4c77136619dcca883c1ee9f`.
 
 
@@ -376,13 +378,13 @@ SHA-256: `ba193e731f3f03a64b05c71db1a65ac7ee70ea0cc4c77136619dcca883c1ee9f`.
 
 ## thumbyGrayscale
 
-Source: [source-library/thumbyGrayscale.py](../source-library/thumbyGrayscale.py).
+Source: [source-library/thumbyGrayscale.py](source-library/thumbyGrayscale.py).
 SHA-256: `f2cdeaf3d15009c3896d293b4f9163599e2f61d64312d2020cd5bbdf6cf348ae`.
 
 
 ## thumbyHardware
 
-Source: [source-library/thumbyHardware.py](../source-library/thumbyHardware.py).
+Source: [source-library/thumbyHardware.py](source-library/thumbyHardware.py).
 SHA-256: `dbe958477b3513ecb54a80b4318b7d352cc0474fb036ddc2e0a416bad02bf4c5`.
 
 
@@ -397,7 +399,7 @@ SHA-256: `dbe958477b3513ecb54a80b4318b7d352cc0474fb036ddc2e0a416bad02bf4c5`.
 
 ## thumbyLink
 
-Source: [source-library/thumbyLink.py](../source-library/thumbyLink.py).
+Source: [source-library/thumbyLink.py](source-library/thumbyLink.py).
 SHA-256: `a332dfa2886df1de615a071fe51194d9eec39d7d33beea1950bfbbd3320d2ccc`.
 
 
@@ -417,7 +419,7 @@ SHA-256: `a332dfa2886df1de615a071fe51194d9eec39d7d33beea1950bfbbd3320d2ccc`.
 
 ## thumbySaves
 
-Source: [source-library/thumbySaves.py](../source-library/thumbySaves.py).
+Source: [source-library/thumbySaves.py](source-library/thumbySaves.py).
 SHA-256: `98967a204a4c4503ce38b7f69716fa07ab3411aee02c549f7754f8f7838860cd`.
 
 
@@ -434,7 +436,7 @@ SHA-256: `98967a204a4c4503ce38b7f69716fa07ab3411aee02c549f7754f8f7838860cd`.
 
 ## thumbySprite
 
-Source: [source-library/thumbySprite.py](../source-library/thumbySprite.py).
+Source: [source-library/thumbySprite.py](source-library/thumbySprite.py).
 SHA-256: `544b829c89309c5f0b8e1f907b1293efae53257c8b9dbb8f1f9366367c283dd3`.
 
 

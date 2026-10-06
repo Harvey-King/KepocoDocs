@@ -1,0 +1,14 @@
+{
+  "python.analysis.stubPath": "./typings",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.extraPaths": ["./vendor/micropython"],
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingModuleSource": "none"
+  },
+  "python.analysis.exclude": ["source-library", "vendor", "tools", "tests"],
+  "[python]": {
+    "editor.tabCompletion": "on",
+    "editor.suggest.showSnippets": true
+  }
+}

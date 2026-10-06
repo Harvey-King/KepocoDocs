@@ -1,16 +1,24 @@
-# Firmware compatibility audit
+# Archived firmware compatibility audit
+
+[Overview](readme.md) · [Getting started](GETTING_STARTED.md) · [Features](FEATURE_GUIDE.md) · [API reference](API_REFERENCE.md) · [Firmware notes](FIRMWARE_NOTES.md) · [USB workflow](USB_WORKFLOW.md)
 
 ## Scope and evidence
 
-Audited the supplied source at `C:/Users/Win1122h2/Downloads`, without importing/executing its modules or changing that directory. Original filenames and line numbers are cited below. The main workspace is `C:/Users/Win1122h2/KepocoSwerve`; its `swerve.py` is the game, not firmware.
+This audit covers the archived source preserved under [`source-library/`](source-library/), without importing/executing its modules or modifying the original archive. Citations below use original filenames and line numbers within `source-library/`. The root-level `swerve.py` is a game, not firmware.
 
 **Performed:** source reading, AST inspection where parsable, and in-memory desktop-Python `compile(..., "exec")` syntax checks of these 17 files: `kepoco.py`, `thumby.py`, `thumbyGraphics.py`, `thumbyButton.py`, `thumbySprite.py`, `thumbyAudio.py`, `thumbyLink.py`, `thumbySaves.py`, `thumbyHardware.py`, `kepocoDisplayDriver.py`, `kepocoDisplayST77xx.py`, `kepocoVGA.py`, `kepocoConfig.py`, `thumbyGrayscale.py`, `dummyScreen.py`, `ssd1306.py`, `demo.py`. Also read `kepoco.cfg` and `credits.txt`.
 
 **Result:** desktop syntax compilation passed for 15 files; `kepocoVGA.py:223` failed with “Generator expression must be parenthesized”; `dummyScreen.py:54` failed with “‘return’ outside function”. AST parsing alone does not catch the latter compiler error. These checks do not evaluate imports, annotations, decorators, GPIO, PIO, filesystem initialization or MicroPython native/viper compilation.
 
-**Not performed:** device/emulator execution, firmware-version verification, flashing, GPIO/audio/link/VGA tests, display timing or rendering validation. Findings described as source defects are statically evidenced; the exact exception on a particular MicroPython build remains untested. Editor completion and host/mock tests cannot establish firmware compatibility.
+**Not performed by the archive audit:** device/emulator execution of the archived modules, installed-firmware verification, flashing, GPIO/audio/link/VGA tests, display timing or rendering validation. Findings described as source defects are statically evidenced; the exact exception on a particular MicroPython build remains untested. Editor completion and host/mock tests cannot establish firmware compatibility.
 
-The API-reference generator may neutralize only the bad VGA function-body line **in memory** so the remaining declarations can be indexed. That is an indexing workaround, explicitly recorded by the parent generator, not repaired firmware or evidence that the original file runs. Workspace reference copies and original Downloads files must retain the unmodified source.
+The API-reference generator may neutralize only the bad VGA function-body line **in memory** so the remaining declarations can be indexed. That is an indexing workaround, explicitly recorded by the generator, not repaired firmware or evidence that the original file runs. The archived `source-library/` reference copies must retain the unmodified source.
+
+## Separate installed-runtime evidence
+
+Prior USB verification used the handheld’s existing **MicroPython 1.29.0 KEPOCO build**, not this archive. The display reported **72×40**; the SWERVE upload was verified by reading the remote file back; 60 gameplay frames and title/crash drawing executed. Physical controls, visible image quality, long-session playability and automatic menu registration were not visually verified. No firmware was flashed or startup files changed. See [USB workflow](USB_WORKFLOW.md#prior-real-device-verification).
+
+These results do not invalidate the archive’s static defects or show that the archive can be installed unchanged. Compare the installed runtime with the archive before attributing an archive finding to your device.
 
 ## Runtime selection is source-declared, not board identification
 
@@ -65,7 +73,7 @@ The code uses `sys.implementation._machine` string tests and an `emulator` impor
 2. On an already configured target, record firmware identification, traceback, logical display dimensions and selected driver. Do not import the dump on desktop Python to obtain these values.
 3. Resolve startup blockers in a separate reviewed firmware copy before attempting game behavior tests. No firmware changes were made by this audit.
 4. Smoke-test A/B and directions, rectangle rendering and a byte-text probe; then verify sprites, modes, saves, audio and link separately only when relevant. VGA initialization writes hardware registers and configures PIO (`kepocoVGA.py:256–280`), so it is not a harmless feature probe.
-5. Keep `typings/`, the VS Code extension and documentation on the PC. Planned editor commands open guides/reference or configure the current project; they do not upload games, flash firmware, or repair runtime defects.
+5. Keep `typings/`, the VS Code extension and documentation on the PC. Editor commands open guides/reference or configure the current project; they do not upload games, flash firmware, repair runtime defects, or install the USB runner/tasks. The repository’s separate [USB tasks](USB_WORKFLOW.md) run or upload game files using the installed runtime.
 
 ## Origin notices
 

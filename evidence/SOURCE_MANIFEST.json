@@ -1,0 +1,3137 @@
+{
+  "description": "AST-only index; original hardware modules were never imported.",
+  "report": {
+    "source_count": 17,
+    "source_stub_count": 17,
+    "source_warning_count": 1,
+    "signature_count": 263
+  },
+  "sources": [
+    {
+      "name": "demo.py",
+      "module": "demo",
+      "source_path": "source-library/demo.py",
+      "sha256": "d99e4dcd13d99dbb86329adcae0668426f50d123d09d0e25d99ceba285f40ad4",
+      "line_count": 242,
+      "parse_warning": null,
+      "classes": [],
+      "functions": [
+        {
+          "name": "demo",
+          "line": 3,
+          "signature": "demo(button_src: str | list[str], duration: int | None=None, run: str | None=None, rseed=3235823343, return_module: bool=False)",
+          "parameters": [
+            "button_src",
+            "duration",
+            "run",
+            "rseed",
+            "return_module"
+          ],
+          "doc": ""
+        },
+        {
+          "name": "record",
+          "line": 154,
+          "signature": "record(run: str)",
+          "parameters": [
+            "run"
+          ],
+          "doc": ""
+        }
+      ]
+    },
+    {
+      "name": "dummyScreen.py",
+      "module": "dummyScreen",
+      "source_path": "source-library/dummyScreen.py",
+      "sha256": "990007d7edc738f25c59d9c35674acde38274640e9d56260c06c37b50ad10341",
+      "line_count": 466,
+      "parse_warning": null,
+      "classes": [
+        {
+          "name": "DummyScreen",
+          "line": 57,
+          "bases": [],
+          "methods": [
+            {
+              "name": "__init__",
+              "line": 58,
+              "signature": "__init__(self, width, height)",
+              "parameters": [
+                "self",
+                "width",
+                "height"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "initEmuScreen",
+              "line": 80,
+              "signature": "initEmuScreen(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "init_display",
+              "line": 83,
+              "signature": "init_display(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "poweroff",
+              "line": 86,
+              "signature": "poweroff(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "poweron",
+              "line": 89,
+              "signature": "poweron(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "contrast",
+              "line": 92,
+              "signature": "contrast(self, contrast)",
+              "parameters": [
+                "self",
+                "contrast"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "invert",
+              "line": 95,
+              "signature": "invert(self, invert)",
+              "parameters": [
+                "self",
+                "invert"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setFont",
+              "line": 99,
+              "signature": "setFont(self, fontFile, width, height, space)",
+              "parameters": [
+                "self",
+                "fontFile",
+                "width",
+                "height",
+                "space"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setFPS",
+              "line": 109,
+              "signature": "setFPS(self, newFrameRate)",
+              "parameters": [
+                "self",
+                "newFrameRate"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "update",
+              "line": 114,
+              "signature": "update(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": "Push the buffer to the hardware display."
+            },
+            {
+              "name": "brightness",
+              "line": 133,
+              "signature": "brightness(self, setting)",
+              "parameters": [
+                "self",
+                "setting"
+              ],
+              "doc": "Set display brightness, valid values 0 to 127"
+            },
+            {
+              "name": "fill",
+              "line": 142,
+              "signature": "fill(self, color: int)",
+              "parameters": [
+                "self",
+                "color"
+              ],
+              "doc": "Fill the buffer with a given color."
+            },
+            {
+              "name": "setPixel",
+              "line": 152,
+              "signature": "setPixel(self, x: int, y: int, color: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "color"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "getPixel",
+              "line": 167,
+              "signature": "getPixel(self, x: int, y: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawLine",
+              "line": 181,
+              "signature": "drawLine(self, x1: int, y1: int, x2: int, y2: int, color: int)",
+              "parameters": [
+                "self",
+                "x1",
+                "y1",
+                "x2",
+                "y2",
+                "color"
+              ],
+              "doc": "Draw a line from (x1, y1) to (x2, y2) in a given color- taken from MicroPython FrameBuf implementation"
+            },
+            {
+              "name": "drawRectangle",
+              "line": 238,
+              "signature": "drawRectangle(self, x: int, y: int, width: int, height: int, color: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "height",
+                "color"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawFilledRectangle",
+              "line": 246,
+              "signature": "drawFilledRectangle(self, x: int, y: int, width: int, height: int, color: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "height",
+                "color"
+              ],
+              "doc": "Fill a rectangle with top left corner (x, y) and size (width, height) in a given color."
+            },
+            {
+              "name": "drawText",
+              "line": 283,
+              "signature": "drawText(self, stringToPrint: ptr8, x: int, y: int, color: int)",
+              "parameters": [
+                "self",
+                "stringToPrint",
+                "x",
+                "y",
+                "color"
+              ],
+              "doc": "Draw a string with top left corner (x, y) in a given color."
+            },
+            {
+              "name": "blit",
+              "line": 336,
+              "signature": "blit(self, sprtptr: ptr8, x: int, y: int, width: int, height: int, key: int, mirrorX: int, mirrorY: int)",
+              "parameters": [
+                "self",
+                "sprtptr",
+                "x",
+                "y",
+                "width",
+                "height",
+                "key",
+                "mirrorX",
+                "mirrorY"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawSprite",
+              "line": 391,
+              "signature": "drawSprite(self, s)",
+              "parameters": [
+                "self",
+                "s"
+              ],
+              "doc": "Draw a sprite to the screen"
+            },
+            {
+              "name": "blitWithMask",
+              "line": 395,
+              "signature": "blitWithMask(self, sprtptr: ptr8, x: int, y: int, width: int, height: int, key: int, mirrorX: int, mirrorY: int, maskptr: ptr8)",
+              "parameters": [
+                "self",
+                "sprtptr",
+                "x",
+                "y",
+                "width",
+                "height",
+                "key",
+                "mirrorX",
+                "mirrorY",
+                "maskptr"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawSpriteWithMask",
+              "line": 431,
+              "signature": "drawSpriteWithMask(self, s, m)",
+              "parameters": [
+                "self",
+                "s",
+                "m"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "reset",
+              "line": 435,
+              "signature": "reset(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "show",
+              "line": 440,
+              "signature": "show(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "show",
+              "line": 461,
+              "signature": "show(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "show",
+              "line": 465,
+              "signature": "show(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            }
+          ]
+        }
+      ],
+      "functions": []
+    },
+    {
+      "name": "kepoco.py",
+      "module": "kepoco",
+      "source_path": "source-library/kepoco.py",
+      "sha256": "2cb5452df0aba44052c63a7abad5910ecf6c428ad07be327a22a2bb3901a109b",
+      "line_count": 68,
+      "parse_warning": null,
+      "classes": [],
+      "functions": []
+    },
+    {
+      "name": "kepocoConfig.py",
+      "module": "kepocoConfig",
+      "source_path": "source-library/kepocoConfig.py",
+      "sha256": "3ce182cc6aa6fde8355e28b47caf1a90840c1eba49867daa306889082635ba8f",
+      "line_count": 153,
+      "parse_warning": null,
+      "classes": [
+        {
+          "name": "Configuration",
+          "line": 12,
+          "bases": [],
+          "methods": [
+            {
+              "name": "__init__",
+              "line": 42,
+              "signature": "__init__(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "__getitem__",
+              "line": 55,
+              "signature": "__getitem__(self, key)",
+              "parameters": [
+                "self",
+                "key"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "__setitem__",
+              "line": 58,
+              "signature": "__setitem__(self, key, value)",
+              "parameters": [
+                "self",
+                "key",
+                "value"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "__getattr__",
+              "line": 70,
+              "signature": "__getattr__(self, key)",
+              "parameters": [
+                "self",
+                "key"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "getOption",
+              "line": 79,
+              "signature": "getOption(self, key)",
+              "parameters": [
+                "self",
+                "key"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "getValue",
+              "line": 87,
+              "signature": "getValue(self, key)",
+              "parameters": [
+                "self",
+                "key"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "items",
+              "line": 93,
+              "signature": "items(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "keys",
+              "line": 96,
+              "signature": "keys(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "values",
+              "line": 99,
+              "signature": "values(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "options",
+              "line": 102,
+              "signature": "options(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "__len__",
+              "line": 105,
+              "signature": "__len__(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "toKey",
+              "line": 109,
+              "signature": "toKey(cls, key)",
+              "parameters": [
+                "cls",
+                "key"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "settings",
+              "line": 118,
+              "signature": "settings(cls)",
+              "parameters": [
+                "cls"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "allSettings",
+              "line": 122,
+              "signature": "allSettings(cls)",
+              "parameters": [
+                "cls"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "getOptions",
+              "line": 126,
+              "signature": "getOptions(cls, key)",
+              "parameters": [
+                "cls",
+                "key"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "getValues",
+              "line": 131,
+              "signature": "getValues(cls, key)",
+              "parameters": [
+                "cls",
+                "key"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "getShortName",
+              "line": 140,
+              "signature": "getShortName(cls, key)",
+              "parameters": [
+                "cls",
+                "key"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "__repr__",
+              "line": 143,
+              "signature": "__repr__(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            }
+          ]
+        }
+      ],
+      "functions": [
+        {
+          "name": "updateAudio",
+          "line": 2,
+          "signature": "updateAudio(newval)",
+          "parameters": [
+            "newval"
+          ],
+          "doc": ""
+        },
+        {
+          "name": "updateBirghtness",
+          "line": 7,
+          "signature": "updateBirghtness(newval)",
+          "parameters": [
+            "newval"
+          ],
+          "doc": ""
+        }
+      ]
+    },
+    {
+      "name": "kepocoDisplayDriver.py",
+      "module": "kepocoDisplayDriver",
+      "source_path": "source-library/kepocoDisplayDriver.py",
+      "sha256": "ae491095a1c2d4259cc06d3543324f787ec0096ba530822769c1ccad4f7d6dd6",
+      "line_count": 154,
+      "parse_warning": null,
+      "classes": [
+        {
+          "name": "DisplayDriver",
+          "line": 3,
+          "bases": [],
+          "methods": [
+            {
+              "name": "__init__",
+              "line": 5,
+              "signature": "__init__(self, width: int, height: int)",
+              "parameters": [
+                "self",
+                "width",
+                "height"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "init_display",
+              "line": 11,
+              "signature": "init_display(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "poweroff",
+              "line": 14,
+              "signature": "poweroff(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "poweron",
+              "line": 17,
+              "signature": "poweron(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "contrast",
+              "line": 20,
+              "signature": "contrast(self, contrast)",
+              "parameters": [
+                "self",
+                "contrast"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "invert",
+              "line": 23,
+              "signature": "invert(self, invert)",
+              "parameters": [
+                "self",
+                "invert"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setModeGreyscale",
+              "line": 26,
+              "signature": "setModeGreyscale(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setModeMono",
+              "line": 29,
+              "signature": "setModeMono(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setModeTinted",
+              "line": 32,
+              "signature": "setModeTinted(self, red, green, blue)",
+              "parameters": [
+                "self",
+                "red",
+                "green",
+                "blue"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setModeRGB",
+              "line": 35,
+              "signature": "setModeRGB(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "enableVGA",
+              "line": 38,
+              "signature": "enableVGA(self, transferBuffer)",
+              "parameters": [
+                "self",
+                "transferBuffer"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "show",
+              "line": 41,
+              "signature": "show(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "brightness",
+              "line": 44,
+              "signature": "brightness(self, setting)",
+              "parameters": [
+                "self",
+                "setting"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "fill",
+              "line": 48,
+              "signature": "fill(self, colour: int)",
+              "parameters": [
+                "self",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawFilledEllispe",
+              "line": 52,
+              "signature": "drawFilledEllispe(self, x: int, y: int, width: int, height: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "height",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawEllispe",
+              "line": 86,
+              "signature": "drawEllispe(self, x: int, y: int, width: int, height: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "height",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawFilledRectangle",
+              "line": 90,
+              "signature": "drawFilledRectangle(self, x: int, y: int, width: int, height: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "height",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawRectangle",
+              "line": 96,
+              "signature": "drawRectangle(self, x: int, y: int, width: int, height: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "height",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setPixel",
+              "line": 102,
+              "signature": "setPixel(self, x: int, y: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "getPixel",
+              "line": 105,
+              "signature": "getPixel(self, x: int, y: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawHLine",
+              "line": 109,
+              "signature": "drawHLine(self, x: int, y: int, width: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawVLine",
+              "line": 115,
+              "signature": "drawVLine(self, x: int, y: int, height: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "height",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawLine",
+              "line": 122,
+              "signature": "drawLine(self, x0: int, y0: int, x1: int, y1: int, colour: int)",
+              "parameters": [
+                "self",
+                "x0",
+                "y0",
+                "x1",
+                "y1",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "blit",
+              "line": 147,
+              "signature": "blit(self, src, x: int, y: int, width: int, height: int, key: int, mirrorX: int, mirrorY: int)",
+              "parameters": [
+                "self",
+                "src",
+                "x",
+                "y",
+                "width",
+                "height",
+                "key",
+                "mirrorX",
+                "mirrorY"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "blitWithMask",
+              "line": 150,
+              "signature": "blitWithMask(self, src, x: int, y: int, width: int, height: int, key: int, mirrorX: int, mirrorY: int, mask)",
+              "parameters": [
+                "self",
+                "src",
+                "x",
+                "y",
+                "width",
+                "height",
+                "key",
+                "mirrorX",
+                "mirrorY",
+                "mask"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "calibrate",
+              "line": 153,
+              "signature": "calibrate(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            }
+          ]
+        }
+      ],
+      "functions": []
+    },
+    {
+      "name": "kepocoDisplayST77xx.py",
+      "module": "kepocoDisplayST77xx",
+      "source_path": "source-library/kepocoDisplayST77xx.py",
+      "sha256": "3885cd64823c1881b64ca93f5983cb9b22277009700ace9dd4d94f33cfc9d047",
+      "line_count": 1373,
+      "parse_warning": null,
+      "classes": [
+        {
+          "name": "AbstractST77xxDriver",
+          "line": 8,
+          "bases": [
+            "DisplayDriver"
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "line": 68,
+              "signature": "__init__(self, width: int, height: int, rotation: int, spi: SPI, dc: Pin, res: Pin, cs: Pin)",
+              "parameters": [
+                "self",
+                "width",
+                "height",
+                "rotation",
+                "spi",
+                "dc",
+                "res",
+                "cs"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "init_display",
+              "line": 86,
+              "signature": "init_display(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "_full_clear",
+              "line": 147,
+              "signature": "_full_clear(self, width, height, color)",
+              "parameters": [
+                "self",
+                "width",
+                "height",
+                "color"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "poweroff",
+              "line": 166,
+              "signature": "poweroff(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "poweron",
+              "line": 170,
+              "signature": "poweron(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "contrast",
+              "line": 174,
+              "signature": "contrast(self, contrast)",
+              "parameters": [
+                "self",
+                "contrast"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "invert",
+              "line": 179,
+              "signature": "invert(self, invert)",
+              "parameters": [
+                "self",
+                "invert"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "_reset",
+              "line": 184,
+              "signature": "_reset(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": "Reset the device."
+            },
+            {
+              "name": "_setWindow",
+              "line": 195,
+              "signature": "_setWindow(self, left: int, top: int, width: int, height: int)",
+              "parameters": [
+                "self",
+                "left",
+                "top",
+                "width",
+                "height"
+              ],
+              "doc": "Set a rectangular area for drawing a color to."
+            },
+            {
+              "name": "_writeCommand",
+              "line": 213,
+              "signature": "_writeCommand(self, command: int)",
+              "parameters": [
+                "self",
+                "command"
+              ],
+              "doc": "Write given command to the device."
+            },
+            {
+              "name": "_writeCommandAndData",
+              "line": 226,
+              "signature": "_writeCommandAndData(self, command: int, data)",
+              "parameters": [
+                "self",
+                "command",
+                "data"
+              ],
+              "doc": "Write given command to the device."
+            },
+            {
+              "name": "brightness",
+              "line": 244,
+              "signature": "brightness(self, setting)",
+              "parameters": [
+                "self",
+                "setting"
+              ],
+              "doc": "Set display brightness, valid values 0 to 127"
+            },
+            {
+              "name": "show",
+              "line": 252,
+              "signature": "show(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            }
+          ]
+        },
+        {
+          "name": "ST77xxCompatDriver",
+          "line": 262,
+          "bases": [
+            "AbstractST77xxDriver"
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "line": 270,
+              "signature": "__init__(self, width: int, height: int, spi: SPI, dc: Pin, res: Pin, cs: Pin, rot: int, actualSize: tuple[int, int], alignX='center', alignY='center')",
+              "parameters": [
+                "self",
+                "width",
+                "height",
+                "spi",
+                "dc",
+                "res",
+                "cs",
+                "rot",
+                "actualSize",
+                "alignX",
+                "alignY"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "fill",
+              "line": 299,
+              "signature": "fill(self, colour: int)",
+              "parameters": [
+                "self",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawFilledRectangle",
+              "line": 312,
+              "signature": "drawFilledRectangle(self, x: int, y: int, width: int, height: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "height",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawRectangle",
+              "line": 389,
+              "signature": "drawRectangle(self, x: int, y: int, width: int, height: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "height",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setPixel",
+              "line": 397,
+              "signature": "setPixel(self, x: int, y: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "getPixel",
+              "line": 417,
+              "signature": "getPixel(self, x: int, y: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawHLine",
+              "line": 434,
+              "signature": "drawHLine(self, x: int, y: int, width: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawVLine",
+              "line": 438,
+              "signature": "drawVLine(self, x: int, y: int, height: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "height",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawLine",
+              "line": 442,
+              "signature": "drawLine(self, x0: int, y0: int, x1: int, y1: int, colour: int)",
+              "parameters": [
+                "self",
+                "x0",
+                "y0",
+                "x1",
+                "y1",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "blit",
+              "line": 528,
+              "signature": "blit(self, src, x: int, y: int, width: int, height: int, key: int, mirrorX: int, mirrorY: int)",
+              "parameters": [
+                "self",
+                "src",
+                "x",
+                "y",
+                "width",
+                "height",
+                "key",
+                "mirrorX",
+                "mirrorY"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "blitWithMask",
+              "line": 629,
+              "signature": "blitWithMask(self, src, x: int, y: int, width: int, height: int, key: int, mirrorX: int, mirrorY: int, mask)",
+              "parameters": [
+                "self",
+                "src",
+                "x",
+                "y",
+                "width",
+                "height",
+                "key",
+                "mirrorX",
+                "mirrorY",
+                "mask"
+              ],
+              "doc": ""
+            }
+          ]
+        },
+        {
+          "name": "ST7735CompatDriver",
+          "line": 730,
+          "bases": [
+            "ST77xxCompatDriver"
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "line": 731,
+              "signature": "__init__(self, width: int, height: int, spi: SPI, dc: Pin, res: Pin, cs: Pin)",
+              "parameters": [
+                "self",
+                "width",
+                "height",
+                "spi",
+                "dc",
+                "res",
+                "cs"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "init_display",
+              "line": 738,
+              "signature": "init_display(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setModeMono",
+              "line": 743,
+              "signature": "setModeMono(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setModeGreyscale",
+              "line": 747,
+              "signature": "setModeGreyscale(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setModeTinted",
+              "line": 751,
+              "signature": "setModeTinted(self, red, green, blue)",
+              "parameters": [
+                "self",
+                "red",
+                "green",
+                "blue"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "_show_mono",
+              "line": 767,
+              "signature": "_show_mono(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "_show_grey",
+              "line": 846,
+              "signature": "_show_grey(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "_show_tinted",
+              "line": 943,
+              "signature": "_show_tinted(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            }
+          ]
+        },
+        {
+          "name": "ST7789CompatDriver",
+          "line": 1041,
+          "bases": [
+            "ST77xxCompatDriver"
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "line": 1042,
+              "signature": "__init__(self, width: int, height: int, spi: SPI, dc: Pin, res: Pin, cs: Pin)",
+              "parameters": [
+                "self",
+                "width",
+                "height",
+                "spi",
+                "dc",
+                "res",
+                "cs"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "init_display",
+              "line": 1050,
+              "signature": "init_display(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setModeMono",
+              "line": 1054,
+              "signature": "setModeMono(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setModeGreyscale",
+              "line": 1058,
+              "signature": "setModeGreyscale(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setModeTinted",
+              "line": 1062,
+              "signature": "setModeTinted(self, red, green, blue)",
+              "parameters": [
+                "self",
+                "red",
+                "green",
+                "blue"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "_show_mono",
+              "line": 1078,
+              "signature": "_show_mono(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "_show_grey",
+              "line": 1167,
+              "signature": "_show_grey(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "_show_tinted",
+              "line": 1271,
+              "signature": "_show_tinted(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            }
+          ]
+        }
+      ],
+      "functions": []
+    },
+    {
+      "name": "kepocoVGA.py",
+      "module": "kepocoVGA",
+      "source_path": "source-library/kepocoVGA.py",
+      "sha256": "f29ea1a23a965c2e5218fc1d9a0c87408dd2c6d3539b1038782b63d54112b1ea",
+      "line_count": 516,
+      "parse_warning": {
+        "line": 223,
+        "message": "Generator expression must be parenthesized",
+        "action": "Only this function-body line replaced by return None in the in-memory index. Original file unchanged."
+      },
+      "classes": [
+        {
+          "name": "VGADriver",
+          "line": 123,
+          "bases": [
+            "DisplayDriver"
+          ],
+          "methods": [
+            {
+              "name": "detect_vga",
+              "line": 126,
+              "signature": "detect_vga(cls)",
+              "parameters": [
+                "cls"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "read_edid",
+              "line": 137,
+              "signature": "read_edid(cls)",
+              "parameters": [
+                "cls"
+              ],
+              "doc": "Derived from https://gist.github.com/shirriff/dd9e35da12879cf1c5ed9ed92ff704ec"
+            },
+            {
+              "name": "supported_refresh_rates",
+              "line": 221,
+              "signature": "supported_refresh_rates(cls)",
+              "parameters": [
+                "cls"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "__init__",
+              "line": 228,
+              "signature": "__init__(self, wrapped_driver, refreshRate=None)",
+              "parameters": [
+                "self",
+                "wrapped_driver",
+                "refreshRate"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "init_display",
+              "line": 256,
+              "signature": "init_display(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "resumeVGA",
+              "line": 329,
+              "signature": "resumeVGA(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "pauseVGA",
+              "line": 342,
+              "signature": "pauseVGA(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "enablePhysicalScreen",
+              "line": 366,
+              "signature": "enablePhysicalScreen(self, enabled)",
+              "parameters": [
+                "self",
+                "enabled"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "show",
+              "line": 370,
+              "signature": "show(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "poweroff",
+              "line": 433,
+              "signature": "poweroff(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "poweron",
+              "line": 437,
+              "signature": "poweron(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "contrast",
+              "line": 441,
+              "signature": "contrast(self, contrast)",
+              "parameters": [
+                "self",
+                "contrast"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "invert",
+              "line": 445,
+              "signature": "invert(self, invert)",
+              "parameters": [
+                "self",
+                "invert"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setModeGreyscale",
+              "line": 449,
+              "signature": "setModeGreyscale(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setModeMono",
+              "line": 453,
+              "signature": "setModeMono(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setModeTinted",
+              "line": 457,
+              "signature": "setModeTinted(self, red, green, blue)",
+              "parameters": [
+                "self",
+                "red",
+                "green",
+                "blue"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setModeRGB",
+              "line": 461,
+              "signature": "setModeRGB(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "brightness",
+              "line": 464,
+              "signature": "brightness(self, setting)",
+              "parameters": [
+                "self",
+                "setting"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "fill",
+              "line": 468,
+              "signature": "fill(self, colour: int)",
+              "parameters": [
+                "self",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawFilledEllispe",
+              "line": 472,
+              "signature": "drawFilledEllispe(self, x: int, y: int, width: int, height: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "height",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawEllispe",
+              "line": 475,
+              "signature": "drawEllispe(self, x: int, y: int, width: int, height: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "height",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawFilledRectangle",
+              "line": 479,
+              "signature": "drawFilledRectangle(self, x: int, y: int, width: int, height: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "height",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawRectangle",
+              "line": 483,
+              "signature": "drawRectangle(self, x: int, y: int, width: int, height: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "height",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setPixel",
+              "line": 487,
+              "signature": "setPixel(self, x: int, y: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "getPixel",
+              "line": 491,
+              "signature": "getPixel(self, x: int, y: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawHLine",
+              "line": 495,
+              "signature": "drawHLine(self, x: int, y: int, width: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawVLine",
+              "line": 499,
+              "signature": "drawVLine(self, x: int, y: int, height: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "height",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawLine",
+              "line": 503,
+              "signature": "drawLine(self, x0: int, y0: int, x1: int, y1: int, colour: int)",
+              "parameters": [
+                "self",
+                "x0",
+                "y0",
+                "x1",
+                "y1",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "blit",
+              "line": 507,
+              "signature": "blit(self, src, x: int, y: int, width: int, height: int, key: int, mirrorX: int, mirrorY: int)",
+              "parameters": [
+                "self",
+                "src",
+                "x",
+                "y",
+                "width",
+                "height",
+                "key",
+                "mirrorX",
+                "mirrorY"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "blitWithMask",
+              "line": 511,
+              "signature": "blitWithMask(self, src, x: int, y: int, width: int, height: int, key: int, mirrorX: int, mirrorY: int, mask)",
+              "parameters": [
+                "self",
+                "src",
+                "x",
+                "y",
+                "width",
+                "height",
+                "key",
+                "mirrorX",
+                "mirrorY",
+                "mask"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "calibrate",
+              "line": 515,
+              "signature": "calibrate(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            }
+          ]
+        }
+      ],
+      "functions": [
+        {
+          "name": "paral_Hsync",
+          "line": 58,
+          "signature": "paral_Hsync()",
+          "parameters": [],
+          "doc": "statemachine configuration\nsm0 is used for H sync signal"
+        },
+        {
+          "name": "paral_Vsync",
+          "line": 78,
+          "signature": "paral_Vsync()",
+          "parameters": [],
+          "doc": "#\n#sm1 is used for V sync signal"
+        },
+        {
+          "name": "paral_RGB",
+          "line": 107,
+          "signature": "paral_RGB()",
+          "parameters": [],
+          "doc": "sm4 is used for RGB signal"
+        }
+      ]
+    },
+    {
+      "name": "ssd1306.py",
+      "module": "ssd1306",
+      "source_path": "source-library/ssd1306.py",
+      "sha256": "53190af3773ab6fc60edc244205d16db2411dfb79d48b25ea05b4f652842281a",
+      "line_count": 1304,
+      "parse_warning": null,
+      "classes": [
+        {
+          "name": "SSD1306",
+          "line": 115,
+          "bases": [],
+          "methods": [
+            {
+              "name": "__init__",
+              "line": 123,
+              "signature": "__init__(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "__enter__",
+              "line": 220,
+              "signature": "__enter__(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": "allow use of 'with'"
+            },
+            {
+              "name": "__exit__",
+              "line": 223,
+              "signature": "__exit__(self, type, value, traceback)",
+              "parameters": [
+                "self",
+                "type",
+                "value",
+                "traceback"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "_initEmuScreen",
+              "line": 228,
+              "signature": "_initEmuScreen(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "_clearEmuFunctions",
+              "line": 236,
+              "signature": "_clearEmuFunctions(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "reset",
+              "line": 248,
+              "signature": "reset(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "init_display",
+              "line": 256,
+              "signature": "init_display(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "enableGrayscale",
+              "line": 293,
+              "signature": "enableGrayscale(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "disableGrayscale",
+              "line": 311,
+              "signature": "disableGrayscale(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "write_cmd",
+              "line": 334,
+              "signature": "write_cmd(self, cmd)",
+              "parameters": [
+                "self",
+                "cmd"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "poweroff",
+              "line": 361,
+              "signature": "poweroff(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "poweron",
+              "line": 363,
+              "signature": "poweron(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "invert",
+              "line": 368,
+              "signature": "invert(self, invert: int)",
+              "parameters": [
+                "self",
+                "invert"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "show",
+              "line": 378,
+              "signature": "show(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "show_async",
+              "line": 391,
+              "signature": "show_async(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setFPS",
+              "line": 400,
+              "signature": "setFPS(self, newFrameRate)",
+              "parameters": [
+                "self",
+                "newFrameRate"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "update",
+              "line": 404,
+              "signature": "update(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "brightness",
+              "line": 424,
+              "signature": "brightness(self, c: int)",
+              "parameters": [
+                "self",
+                "c"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "_init_grayscale",
+              "line": 472,
+              "signature": "_init_grayscale(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "_display_thread",
+              "line": 556,
+              "signature": "_display_thread(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": "GPU (Gray Processing Unit) thread function"
+            },
+            {
+              "name": "_deinit_grayscale",
+              "line": 736,
+              "signature": "_deinit_grayscale(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "fill",
+              "line": 746,
+              "signature": "fill(self, colour: int)",
+              "parameters": [
+                "self",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawFilledRectangle",
+              "line": 759,
+              "signature": "drawFilledRectangle(self, x: int, y: int, width: int, height: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "height",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawRectangle",
+              "line": 835,
+              "signature": "drawRectangle(self, x: int, y: int, width: int, height: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "height",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setPixel",
+              "line": 844,
+              "signature": "setPixel(self, x: int, y: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "getPixel",
+              "line": 862,
+              "signature": "getPixel(self, x: int, y: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawLine",
+              "line": 877,
+              "signature": "drawLine(self, x0: int, y0: int, x1: int, y1: int, colour: int)",
+              "parameters": [
+                "self",
+                "x0",
+                "y0",
+                "x1",
+                "y1",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setFont",
+              "line": 962,
+              "signature": "setFont(self, fontFile, width, height, space)",
+              "parameters": [
+                "self",
+                "fontFile",
+                "width",
+                "height",
+                "space"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawText",
+              "line": 974,
+              "signature": "drawText(self, stringToPrint, x: int, y: int, colour: int)",
+              "parameters": [
+                "self",
+                "stringToPrint",
+                "x",
+                "y",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "blit",
+              "line": 1020,
+              "signature": "blit(self, src, x: int, y: int, width: int, height: int, key: int, mirrorX: int, mirrorY: int)",
+              "parameters": [
+                "self",
+                "src",
+                "x",
+                "y",
+                "width",
+                "height",
+                "key",
+                "mirrorX",
+                "mirrorY"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawSprite",
+              "line": 1119,
+              "signature": "drawSprite(self, s)",
+              "parameters": [
+                "self",
+                "s"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "blitWithMask",
+              "line": 1123,
+              "signature": "blitWithMask(self, src, x: int, y: int, width: int, height: int, key: int, mirrorX: int, mirrorY: int, mask)",
+              "parameters": [
+                "self",
+                "src",
+                "x",
+                "y",
+                "width",
+                "height",
+                "key",
+                "mirrorX",
+                "mirrorY",
+                "mask"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawSpriteWithMask",
+              "line": 1222,
+              "signature": "drawSpriteWithMask(self, s, m)",
+              "parameters": [
+                "self",
+                "s",
+                "m"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "calibrate",
+              "line": 1225,
+              "signature": "calibrate(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            }
+          ]
+        }
+      ],
+      "functions": []
+    },
+    {
+      "name": "thumby.py",
+      "module": "thumby",
+      "source_path": "source-library/thumby.py",
+      "sha256": "bd7c4a032fed705fdedb4949bd21fc503865c1c05c0cce5fc25cb1311051b70b",
+      "line_count": 62,
+      "parse_warning": null,
+      "classes": [],
+      "functions": []
+    },
+    {
+      "name": "thumbyAudio.py",
+      "module": "thumbyAudio",
+      "source_path": "source-library/thumbyAudio.py",
+      "sha256": "fc6dd47549dbf03d91b89f8ee8d78d9d450871af49be8dfbad1a0bc811514375",
+      "line_count": 129,
+      "parse_warning": null,
+      "classes": [
+        {
+          "name": "TimerDummy",
+          "line": 46,
+          "bases": [],
+          "methods": [
+            {
+              "name": "__init__",
+              "line": 47,
+              "signature": "__init__(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "init",
+              "line": 50,
+              "signature": "init(self, period, mode, callback)",
+              "parameters": [
+                "self",
+                "period",
+                "mode",
+                "callback"
+              ],
+              "doc": ""
+            }
+          ]
+        },
+        {
+          "name": "AudioClass",
+          "line": 59,
+          "bases": [],
+          "methods": [
+            {
+              "name": "__init__",
+              "line": 60,
+              "signature": "__init__(self, pwm)",
+              "parameters": [
+                "self",
+                "pwm"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setEnabled",
+              "line": 75,
+              "signature": "setEnabled(self, setting=1)",
+              "parameters": [
+                "self",
+                "setting"
+              ],
+              "doc": "Set the audio to disabled, mid, or high output"
+            },
+            {
+              "name": "stop",
+              "line": 84,
+              "signature": "stop(self, dummy=None)",
+              "parameters": [
+                "self",
+                "dummy"
+              ],
+              "doc": "Stop audio."
+            },
+            {
+              "name": "set",
+              "line": 92,
+              "signature": "set(self, freq)",
+              "parameters": [
+                "self",
+                "freq"
+              ],
+              "doc": "Set the frequency and duty of the PWM audio if currently enabled."
+            },
+            {
+              "name": "play",
+              "line": 102,
+              "signature": "play(self, freq, duration)",
+              "parameters": [
+                "self",
+                "freq",
+                "duration"
+              ],
+              "doc": "Play a given frequency for the duration with a given duty cycle for PWM audio. Returns before audio is done playing."
+            },
+            {
+              "name": "playBlocking",
+              "line": 113,
+              "signature": "playBlocking(self, freq, duration)",
+              "parameters": [
+                "self",
+                "freq",
+                "duration"
+              ],
+              "doc": "Play a given frequency for the duration with a given duty cycle for PWM audio. Returns after audio is done playing."
+            }
+          ]
+        }
+      ],
+      "functions": []
+    },
+    {
+      "name": "thumbyButton.py",
+      "module": "thumbyButton",
+      "source_path": "source-library/thumbyButton.py",
+      "sha256": "3335ac9611054d342758c8b5aea692aebd7a6f5efeb5c4abf41ade49357b3fc3",
+      "line_count": 145,
+      "parse_warning": null,
+      "classes": [
+        {
+          "name": "ButtonClass",
+          "line": 43,
+          "bases": [],
+          "methods": [
+            {
+              "name": "__init__",
+              "line": 44,
+              "signature": "__init__(self, pin)",
+              "parameters": [
+                "self",
+                "pin"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "pressed",
+              "line": 52,
+              "signature": "pressed(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "pressed",
+              "line": 56,
+              "signature": "pressed(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "justPressed",
+              "line": 61,
+              "signature": "justPressed(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": "Returns True if the button was just pressed, False if not."
+            },
+            {
+              "name": "update",
+              "line": 74,
+              "signature": "update(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": "Latches a button press state to be returned later through justPressed"
+            }
+          ]
+        }
+      ],
+      "functions": [
+        {
+          "name": "inputPressed",
+          "line": 109,
+          "signature": "inputPressed(buttons=allButtons)",
+          "parameters": [
+            "buttons"
+          ],
+          "doc": "Returns true if any buttons are currently pressed on the thumby."
+        },
+        {
+          "name": "inputJustPressed",
+          "line": 114,
+          "signature": "inputJustPressed(buttons=allButtons)",
+          "parameters": [
+            "buttons"
+          ],
+          "doc": "Returns true if any buttons were just pressed on the thumby."
+        },
+        {
+          "name": "dpadPressed",
+          "line": 119,
+          "signature": "dpadPressed()",
+          "parameters": [],
+          "doc": "Returns true if any dpad buttons are currently pressed on the thumby."
+        },
+        {
+          "name": "dpadJustPressed",
+          "line": 124,
+          "signature": "dpadJustPressed()",
+          "parameters": [],
+          "doc": "Returns true if any dpad buttons were just pressed on the thumby."
+        },
+        {
+          "name": "actionPressed",
+          "line": 129,
+          "signature": "actionPressed()",
+          "parameters": [],
+          "doc": "Returns true if either action button is pressed on the thumby."
+        },
+        {
+          "name": "actionJustPressed",
+          "line": 134,
+          "signature": "actionJustPressed()",
+          "parameters": [],
+          "doc": "Returns true if either action button was just pressed on the thumby."
+        },
+        {
+          "name": "updateButtons",
+          "line": 138,
+          "signature": "updateButtons(buttons=allButtons)",
+          "parameters": [
+            "buttons"
+          ],
+          "doc": ""
+        },
+        {
+          "name": "updateButtons",
+          "line": 143,
+          "signature": "updateButtons(buttons=allButtons)",
+          "parameters": [
+            "buttons"
+          ],
+          "doc": ""
+        }
+      ]
+    },
+    {
+      "name": "thumbyGraphics.py",
+      "module": "thumbyGraphics",
+      "source_path": "source-library/thumbyGraphics.py",
+      "sha256": "ba193e731f3f03a64b05c71db1a65ac7ee70ea0cc4c77136619dcca883c1ee9f",
+      "line_count": 317,
+      "parse_warning": null,
+      "classes": [
+        {
+          "name": "DisplayInterface",
+          "line": 9,
+          "bases": [],
+          "methods": [
+            {
+              "name": "__init__",
+              "line": 16,
+              "signature": "__init__(self, driver: DisplayDriver)",
+              "parameters": [
+                "self",
+                "driver"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "poweroff",
+              "line": 31,
+              "signature": "poweroff(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "poweron",
+              "line": 34,
+              "signature": "poweron(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "contrast",
+              "line": 37,
+              "signature": "contrast(self, contrast)",
+              "parameters": [
+                "self",
+                "contrast"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "invert",
+              "line": 40,
+              "signature": "invert(self, inverted)",
+              "parameters": [
+                "self",
+                "inverted"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "flash",
+              "line": 43,
+              "signature": "flash(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "enableGrayscale",
+              "line": 49,
+              "signature": "enableGrayscale(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": "Deprecated"
+            },
+            {
+              "name": "disableGrayscale",
+              "line": 53,
+              "signature": "disableGrayscale(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": "Deprecated"
+            },
+            {
+              "name": "enableGreyscale",
+              "line": 57,
+              "signature": "enableGreyscale(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": "Deprecated"
+            },
+            {
+              "name": "disableGreyscale",
+              "line": 61,
+              "signature": "disableGreyscale(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": "Deprecated"
+            },
+            {
+              "name": "setColourTint",
+              "line": 65,
+              "signature": "setColourTint(self, red, green, blue)",
+              "parameters": [
+                "self",
+                "red",
+                "green",
+                "blue"
+              ],
+              "doc": "Deprecated"
+            },
+            {
+              "name": "setModeMono",
+              "line": 68,
+              "signature": "setModeMono(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setModeGreyscale",
+              "line": 71,
+              "signature": "setModeGreyscale(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setModeTinted",
+              "line": 74,
+              "signature": "setModeTinted(self, red, green, blue)",
+              "parameters": [
+                "self",
+                "red",
+                "green",
+                "blue"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "show",
+              "line": 77,
+              "signature": "show(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setFPS",
+              "line": 81,
+              "signature": "setFPS(self, newFrameRate)",
+              "parameters": [
+                "self",
+                "newFrameRate"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "update",
+              "line": 86,
+              "signature": "update(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": "Push the buffer to the hardware display."
+            },
+            {
+              "name": "brightness",
+              "line": 100,
+              "signature": "brightness(self, setting)",
+              "parameters": [
+                "self",
+                "setting"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "fill",
+              "line": 104,
+              "signature": "fill(self, colour: int)",
+              "parameters": [
+                "self",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawFilledRectangle",
+              "line": 108,
+              "signature": "drawFilledRectangle(self, x: int, y: int, width: int, height: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "height",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawRectangle",
+              "line": 112,
+              "signature": "drawRectangle(self, x: int, y: int, width: int, height: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "height",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawFilledEllispe",
+              "line": 116,
+              "signature": "drawFilledEllispe(self, x: int, y: int, width: int, height: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "height",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawEllispe",
+              "line": 120,
+              "signature": "drawEllispe(self, x: int, y: int, width: int, height: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "width",
+                "height",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setPixel",
+              "line": 124,
+              "signature": "setPixel(self, x: int, y: int, colour: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "getPixel",
+              "line": 128,
+              "signature": "getPixel(self, x: int, y: int)",
+              "parameters": [
+                "self",
+                "x",
+                "y"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawLine",
+              "line": 132,
+              "signature": "drawLine(self, x0: int, y0: int, x1: int, y1: int, colour: int)",
+              "parameters": [
+                "self",
+                "x0",
+                "y0",
+                "x1",
+                "y1",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setFont",
+              "line": 135,
+              "signature": "setFont(self, fontFile, width=None, height=None, space=1)",
+              "parameters": [
+                "self",
+                "fontFile",
+                "width",
+                "height",
+                "space"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawText",
+              "line": 153,
+              "signature": "drawText(self, stringToPrint, x: int, y: int, colour: int)",
+              "parameters": [
+                "self",
+                "stringToPrint",
+                "x",
+                "y",
+                "colour"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "blit",
+              "line": 181,
+              "signature": "blit(self, src, x: int, y: int, width: int, height: int, key: int, mirrorX: int, mirrorY: int)",
+              "parameters": [
+                "self",
+                "src",
+                "x",
+                "y",
+                "width",
+                "height",
+                "key",
+                "mirrorX",
+                "mirrorY"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawSprite",
+              "line": 185,
+              "signature": "drawSprite(self, s)",
+              "parameters": [
+                "self",
+                "s"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "blitWithMask",
+              "line": 189,
+              "signature": "blitWithMask(self, src, x: int, y: int, width: int, height: int, key: int, mirrorX: int, mirrorY: int, mask)",
+              "parameters": [
+                "self",
+                "src",
+                "x",
+                "y",
+                "width",
+                "height",
+                "key",
+                "mirrorX",
+                "mirrorY",
+                "mask"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "drawSpriteWithMask",
+              "line": 193,
+              "signature": "drawSpriteWithMask(self, s, m)",
+              "parameters": [
+                "self",
+                "s",
+                "m"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "calibrate",
+              "line": 196,
+              "signature": "calibrate(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            }
+          ]
+        }
+      ],
+      "functions": [
+        {
+          "name": "detect_vga",
+          "line": 218,
+          "signature": "detect_vga(i2c, guess=False)",
+          "parameters": [
+            "i2c",
+            "guess"
+          ],
+          "doc": ""
+        },
+        {
+          "name": "do_test",
+          "line": 282,
+          "signature": "do_test()",
+          "parameters": [],
+          "doc": ""
+        }
+      ]
+    },
+    {
+      "name": "thumbyGrayscale.py",
+      "module": "thumbyGrayscale",
+      "source_path": "source-library/thumbyGrayscale.py",
+      "sha256": "f2cdeaf3d15009c3896d293b4f9163599e2f61d64312d2020cd5bbdf6cf348ae",
+      "line_count": 38,
+      "parse_warning": null,
+      "classes": [],
+      "functions": []
+    },
+    {
+      "name": "thumbyHardware.py",
+      "module": "thumbyHardware",
+      "source_path": "source-library/thumbyHardware.py",
+      "sha256": "dbe958477b3513ecb54a80b4318b7d352cc0474fb036ddc2e0a416bad02bf4c5",
+      "line_count": 137,
+      "parse_warning": null,
+      "classes": [
+        {
+          "name": "PwmDummy",
+          "line": 53,
+          "bases": [],
+          "methods": [
+            {
+              "name": "__init__",
+              "line": 54,
+              "signature": "__init__(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "duty_u16",
+              "line": 57,
+              "signature": "duty_u16(self, value)",
+              "parameters": [
+                "self",
+                "value"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "freq",
+              "line": 60,
+              "signature": "freq(self, value)",
+              "parameters": [
+                "self",
+                "value"
+              ],
+              "doc": ""
+            }
+          ]
+        }
+      ],
+      "functions": [
+        {
+          "name": "reset",
+          "line": 50,
+          "signature": "reset()",
+          "parameters": [],
+          "doc": ""
+        },
+        {
+          "name": "reset",
+          "line": 69,
+          "signature": "reset()",
+          "parameters": [],
+          "doc": ""
+        },
+        {
+          "name": "reset",
+          "line": 133,
+          "signature": "reset()",
+          "parameters": [],
+          "doc": "Wrap machine.reset() to be accessible as thumby.reset()"
+        }
+      ]
+    },
+    {
+      "name": "thumbyLink.py",
+      "module": "thumbyLink",
+      "source_path": "source-library/thumbyLink.py",
+      "sha256": "a332dfa2886df1de615a071fe51194d9eec39d7d33beea1950bfbbd3320d2ccc",
+      "line_count": 183,
+      "parse_warning": null,
+      "classes": [
+        {
+          "name": "LinkClass",
+          "line": 38,
+          "bases": [],
+          "methods": [
+            {
+              "name": "__init__",
+              "line": 39,
+              "signature": "__init__(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "init",
+              "line": 43,
+              "signature": "init(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "send",
+              "line": 47,
+              "signature": "send(self, data)",
+              "parameters": [
+                "self",
+                "data"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "receive",
+              "line": 51,
+              "signature": "receive(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            }
+          ]
+        },
+        {
+          "name": "LinkClass",
+          "line": 57,
+          "bases": [],
+          "methods": [
+            {
+              "name": "__init__",
+              "line": 58,
+              "signature": "__init__(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "init",
+              "line": 63,
+              "signature": "init(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "send",
+              "line": 78,
+              "signature": "send(self, data)",
+              "parameters": [
+                "self",
+                "data"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "receive",
+              "line": 131,
+              "signature": "receive(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            }
+          ]
+        }
+      ],
+      "functions": []
+    },
+    {
+      "name": "thumbySaves.py",
+      "module": "thumbySaves",
+      "source_path": "source-library/thumbySaves.py",
+      "sha256": "98967a204a4c4503ce38b7f69716fa07ab3411aee02c549f7754f8f7838860cd",
+      "line_count": 174,
+      "parse_warning": null,
+      "classes": [
+        {
+          "name": "SavesClass",
+          "line": 49,
+          "bases": [],
+          "methods": [
+            {
+              "name": "__init__",
+              "line": 50,
+              "signature": "__init__(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setName",
+              "line": 74,
+              "signature": "setName(self, subdir)",
+              "parameters": [
+                "self",
+                "subdir"
+              ],
+              "doc": "Set a game save's working subdirectory in \"/Saves/\"\n@micropython.viper"
+            },
+            {
+              "name": "setItem",
+              "line": 104,
+              "signature": "setItem(self, key, value)",
+              "parameters": [
+                "self",
+                "key",
+                "value"
+              ],
+              "doc": "Set entry in volatile dictionary"
+            },
+            {
+              "name": "getItem",
+              "line": 117,
+              "signature": "getItem(self, key)",
+              "parameters": [
+                "self",
+                "key"
+              ],
+              "doc": "Get entry from volatile dictionary"
+            },
+            {
+              "name": "delItem",
+              "line": 127,
+              "signature": "delItem(self, key)",
+              "parameters": [
+                "self",
+                "key"
+              ],
+              "doc": "Delete entry in volatile dictionary"
+            },
+            {
+              "name": "hasItem",
+              "line": 136,
+              "signature": "hasItem(self, key)",
+              "parameters": [
+                "self",
+                "key"
+              ],
+              "doc": "Check if save data entry exists in volatile dictionary"
+            },
+            {
+              "name": "save",
+              "line": 145,
+              "signature": "save(self, backup=False)",
+              "parameters": [
+                "self",
+                "backup"
+              ],
+              "doc": "Write volatile dictionary to persistent.json\n@micropython.native"
+            },
+            {
+              "name": "getName",
+              "line": 170,
+              "signature": "getName(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": "Return the current save path"
+            }
+          ]
+        }
+      ],
+      "functions": []
+    },
+    {
+      "name": "thumbySprite.py",
+      "module": "thumbySprite",
+      "source_path": "source-library/thumbySprite.py",
+      "sha256": "544b829c89309c5f0b8e1f907b1293efae53257c8b9dbb8f1f9366367c283dd3",
+      "line_count": 102,
+      "parse_warning": null,
+      "classes": [
+        {
+          "name": "Sprite",
+          "line": 26,
+          "bases": [],
+          "methods": [
+            {
+              "name": "__init__",
+              "line": 28,
+              "signature": "__init__(self, width, height, bitmapData, x=0, y=0, key=-1, mirrorX=False, mirrorY=False)",
+              "parameters": [
+                "self",
+                "width",
+                "height",
+                "bitmapData",
+                "x",
+                "y",
+                "key",
+                "mirrorX",
+                "mirrorY"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "getFrame",
+              "line": 80,
+              "signature": "getFrame(self)",
+              "parameters": [
+                "self"
+              ],
+              "doc": ""
+            },
+            {
+              "name": "setFrame",
+              "line": 84,
+              "signature": "setFrame(self, frame)",
+              "parameters": [
+                "self",
+                "frame"
+              ],
+              "doc": ""
+            }
+          ]
+        }
+      ],
+      "functions": []
+    }
+  ]
+}

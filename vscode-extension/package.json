@@ -1,0 +1,30 @@
+{
+  "name": "kepoco-devkit",
+  "displayName": "Kepoco Dev Kit",
+  "publisher": "kepoco-local",
+  "version": "0.2.0",
+  "repository": {"type": "git", "url": "https://github.com/Harvey-King/KepocoDocs.git"},
+  "homepage": "https://github.com/Harvey-King/KepocoDocs",
+  "bugs": {"url": "https://github.com/Harvey-King/KepocoDocs/issues"},
+  "description": "Source-derived Kepoco completion hints, hover docs, snippets, API reference and project setup.",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Programming Languages", "Snippets", "Other"],
+  "license": "GPL-3.0-or-later",
+  "main": "./extension.js",
+  "activationEvents": ["onLanguage:python"],
+  "extensionDependencies": ["ms-python.python", "ms-python.vscode-pylance"],
+  "contributes": {
+    "commands": [
+      {"command": "kepoco.openGettingStarted", "title": "Kepoco: Open Getting Started"},
+      {"command": "kepoco.openApiReference", "title": "Kepoco: Open API Reference"},
+      {"command": "kepoco.openFirmwareNotes", "title": "Kepoco: Open Firmware Notes"},
+      {"command": "kepoco.setupProject", "title": "Kepoco: Set Up Current Project"},
+      {"command": "kepoco.verifyIntelliSense", "title": "Kepoco: Check IntelliSense"}
+    ],
+    "snippets": [{"language": "python", "path": "./snippets/kepoco.json"}]
+  },
+  "capabilities": {
+    "untrustedWorkspaces": {"supported": false, "description": "Project setup writes editor-only files to the selected workspace."},
+    "virtualWorkspaces": {"supported": false}
+  }
+}
