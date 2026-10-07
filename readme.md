@@ -1,3 +1,5 @@
+I need sum stars please twin if u see this
+
 <p align="center"><img src="assets/banner.svg" alt="Kepoco Docs — tiny screen, proper tools" width="100%"></p>
 
 <p align="center">
