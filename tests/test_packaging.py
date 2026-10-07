@@ -19,6 +19,9 @@ class PackagingTests(unittest.TestCase):
                 shutil.copytree(ROOT/name,root/name)
             for name in (*mod.GUIDES,'swerve.py','LICENSE'):
                 shutil.copy2(ROOT/name,root/name)
+            cache=root/'examples/__pycache__'
+            cache.mkdir(exist_ok=True)
+            (cache/'private-machine.pyc').write_bytes(b'Host-only bytecode')
             originals={file.relative_to(root):file.read_bytes()
                        for file in root.rglob('*') if file.is_file()}
             extension=root/'vscode-extension'
@@ -39,6 +42,22 @@ class PackagingTests(unittest.TestCase):
             self.assertTrue((assets/'docs/assets/banner.svg').is_file())
             self.assertTrue((assets/'docs/LICENSE').is_file())
             self.assertTrue((assets/'docs/examples/01_quickstart.py').is_file())
+            for directory in (assets/'examples',assets/'docs/examples'):
+                self.assertFalse((directory/'__pycache__').exists(),
+                                 'Host bytecode leaked into packaged examples')
+
+    def test_staged_cookbook_navigation_resolves_in_both_locations(self):
+        spec=importlib.util.spec_from_file_location('build_release',ROOT/'tools/build_release.py')
+        mod=importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        assets=mod.stage()
+        import re
+        for doc in (assets/'examples/README.md',assets/'docs/examples/README.md'):
+            for target in re.findall(r'\]\(([^)]+)\)',doc.read_text(encoding='utf-8')):
+                # Isolate parent navigation from example files built separately.
+                if target.startswith('../'):
+                    with self.subTest(catalogue=str(doc),target=target):
+                        self.assertTrue((doc.parent/target).is_file(),target)
 
     def test_staged_assets_have_docs_sources_and_notices(self):
         file=ROOT/'tools/build_release.py'
