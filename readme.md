@@ -11,7 +11,7 @@
 
 Source-grounded documentation and practical tools for building MicroPython games on the University of Kent's Kepoco handheld. Write in VS Code, get real autocomplete, then run your saved game on the handheld over USB—without using the web editor.
 
-I started this because I couldn't find the reference I needed for my university project. The docs and tooling were developed with AI assistance, checked against the supplied library source, and tested as described below. This is a community project, not an official Kent or TinyCircuits manual.
+I started this because I couldn't find the reference I needed for my university project. The docs and stuff were non existant and i realised that it was very very very annoying so i js done this because who the fuck wants to work without docs.
 
 ## Start here
 
