@@ -24,6 +24,10 @@ The display interface copies its logical dimensions from the selected driver; th
 
 USB run and upload tasks are now available in this workspace: see [USB_WORKFLOW.md](USB_WORKFLOW.md). Press **Ctrl+S** to save the current `.py` file, then **Ctrl+Shift+B** to run it on the connected handheld. The upload task installs only that game file under `/Games/<game-name>/<filename>.py` and verifies it by reading it back. Do not overwrite firmware libraries or copy the archived source library to the target. Existing SWERVE uses its own rectangle-based font (`swerve.py:59–83`) and does not call library `drawText`; the library still loads `/lib/font5x7.bin` during display construction (`thumbyGraphics.py:23,135–145`).
 
+## Example cookbook: choose a lesson
+
+The [example cookbook](examples/README.md) lists complete, commented programs in learning order: menu/settings/slider first, then smooth movement, animated sprites, a collect-the-dot game and a stopwatch. Open one `.py` file, save it and use the default USB run task. They do not require uploading the source archive or editor stubs. The slider changes a live speed variable; it keeps settings only for the current run.
+
 ## Target-runtime example: moving a rectangle
 
 **For the target runtime only; not hardware-tested.** This avoids the audited `drawText` and `getPixel` problems. Poll each edge once per frame; use held input for continuous movement.

@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Added five standalone, commented lessons: menu/settings/slider, smooth movement, animated sprite, collect-the-dot and stopwatch.
+- Added an example cookbook with controls, explanation, customization ideas and runtime caveats.
+- Linked the learning order from the README and getting-started guide.
+- Added host behavior tests and checked catalogue navigation in both packaged locations.
+
 ## 0.2.0 — 2026-10-06
 
 - Rebuilt the README and guide navigation, with a real game-render preview.

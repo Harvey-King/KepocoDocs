@@ -19,6 +19,7 @@ I started this because I couldn't find the reference I needed for my university 
 |---|---|
 | Set up my editor and write a first game | [Getting started](GETTING_STARTED.md) |
 | Save, test and upload from VS Code | [USB workflow](USB_WORKFLOW.md) |
+| Browse explained, runnable lessons | [Example cookbook](examples/README.md) |
 | Learn drawing, controls, sprites, audio and saves | [Feature guide](FEATURE_GUIDE.md) |
 | Find exact methods and parameters | [API reference](API_REFERENCE.md) |
 | Understand firmware bugs and backend differences | [Firmware notes](FIRMWARE_NOTES.md) |
@@ -73,6 +74,20 @@ Choose **Terminal → Run Task → Kepoco: Upload current game to handheld**.
 A single saved `swerve.py` is installed at `/Games/swerve/swerve.py` and verified against its local SHA-256. Re-uploading replaces only that game file. The task does not touch startup files, firmware libraries or your downloaded dump.
 
 Then choose **Kepoco: Return to device menu**. Menu listing behavior can depend on installed firmware; the upload and remote contents were verified, but automatic menu registration has not been visually checked.
+
+## Explained examples
+
+Start with the [menu + settings + slider lesson](examples/02_menu_settings_slider.py), then work through movement, sprite animation, collision/scoring and a stopwatch. Every lesson is a standalone `.py` file with comments and controls.
+
+| Example | Learn |
+|---|---|
+| [Menu, settings and slider](examples/02_menu_settings_slider.py) | Change a speed variable and use it in gameplay |
+| [Smooth movement](examples/03_smooth_movement.py) | Held input, elapsed time and screen bounds |
+| [Animated sprite](examples/04_animated_sprite.py) | Bitmap frames and timed animation |
+| [Collect the dot](examples/05_collect_the_dot.py) | Collision, score and respawning |
+| [Stopwatch](examples/06_stopwatch.py) | Start/pause/reset and wrap-safe timing |
+
+The [example cookbook](examples/README.md) explains how each works and what to change. Save a lesson and press **Ctrl+Shift+B** to run it through this workspace's USB task. Settings in the slider lesson are in memory, not permanently saved to the handheld. Host tests do not replace physical play testing.
 
 ## SWERVE
 
